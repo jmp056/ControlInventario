@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
@@ -79,6 +80,12 @@
     <Compile Include="UI\Registros\rCategorias.Designer.cs">
       <DependentUpon>rCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\rCategorias.resx">
       <DependentUpon>rCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
