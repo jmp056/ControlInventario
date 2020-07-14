@@ -67,6 +67,7 @@
             this.AnadirCategoriasButton.TabIndex = 164;
             this.AnadirCategoriasButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AnadirCategoriasButton.UseVisualStyleBackColor = true;
+            this.AnadirCategoriasButton.Click += new System.EventHandler(this.AnadirCategoriasButton_Click);
             // 
             // PrecioNumericUpDown
             // 
@@ -115,6 +116,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -128,6 +130,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // LimpiarButton
             // 
@@ -141,6 +144,7 @@
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
             // 
             // FechaDeRegistroDateTimePicker
             // 
@@ -219,6 +223,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // DescripcionTextBox
             // 

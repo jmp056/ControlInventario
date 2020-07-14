@@ -23,5 +23,11 @@ namespace ControlInventario
             rCategorias rC = new rCategorias(0);
             rC.ShowDialog();
         }
+
+        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProductos rP = new rProductos(0);
+            rP.ShowDialog();
+        }
     }
 }

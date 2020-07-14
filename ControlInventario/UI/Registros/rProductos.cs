@@ -172,5 +172,156 @@ namespace ControlInventario.UI.Registros
 
             return Paso;
         }
+
+        private bool ExisteEnLaBaseDeDatos()// Funcnion encargada de verificar si un producto existe en una base de datos!
+        {
+            Productos producto = new Productos();
+
+            RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
+            producto = repositorio.Buscar((int)ProductoIdNumericUpDown.Value);
+
+            return (producto != null);
+        }
+
+        private void Buscar() // Funcion encargada de realizar la busqueda
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            Productos Producto = new Productos();
+
+            int.TryParse(ProductoIdNumericUpDown.Text, out int id);
+
+            Producto = Repositorio.Buscar(id);
+
+            if (Producto != null)
+            {
+                MyErrorProvider.Clear();
+                LlenaCampo(Producto);
+                ProductoIdNumericUpDown.Enabled = false;
+                BuscarButton.Enabled = false;
+            }
+            else
+            {
+                Limpiar();
+                MyErrorProvider.SetError(ProductoIdNumericUpDown, "No existe un producto con este codigo!");
+                DescripcionTextBox.Focus();
+            }
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void LimpiarButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+
+            Productos Producto = new Productos();
+
+            bool Paso = false;
+
+            if (!Validar())
+                return;
+
+            Producto = LlenaClase();
+
+            if (ProductoIdNumericUpDown.Value == 0)
+            {
+                Paso = Repositorio.Guardar(Producto);
+            }
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar un producto que no existe!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var result = MessageBox.Show("¿Seguro que desea modificar este producto?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    Paso = Repositorio.Modificar(Producto);
+                    if (Paso)
+                    {
+                        MessageBox.Show("El producto se modificó exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar el producto!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (Paso)
+            {
+                MessageBox.Show("El producto se guardado exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo guardar el producto!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DescripcionTextBox.Focus();
+            }
+
+            DescripcionTextBox.Focus();
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+
+            MyErrorProvider.Clear();
+            bool Paso = false;
+            int.TryParse(ProductoIdNumericUpDown.Text, out int Id);
+
+            if (!ExisteEnLaBaseDeDatos())
+            {
+                MyErrorProvider.SetError(ProductoIdNumericUpDown, "Este producto no existe!");
+                return;
+            }
+            else
+            {
+                Productos Producto = Repositorio.Buscar(Convert.ToInt32(ProductoIdNumericUpDown.Value));
+                if (Producto != null)
+                {
+                    var result = MessageBox.Show("¿Seguro que desea eliminar este producto?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (result == DialogResult.Yes)
+                    {
+                        Paso = Repositorio.Eliminar(Id);
+                        if (Paso)
+                        {
+                            MessageBox.Show("El producto se elimino exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DescripcionTextBox.Focus();
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo eliminar el producto!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            DescripcionTextBox.Focus();
+                        }
+                        return;
+                    }
+                }
+
+            }
+            DescripcionTextBox.Focus();
+        }
+
+        private void AnadirCategoriasButton_Click(object sender, EventArgs e)
+        {
+            rCategorias rcategorias = new rCategorias(0);
+            rcategorias.ShowDialog();
+        }
     }
 }
