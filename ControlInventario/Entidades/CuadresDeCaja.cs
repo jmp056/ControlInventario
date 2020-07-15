@@ -8,7 +8,6 @@ namespace ControlInventario.Entidades
         [Key]
         public int CuadreDeCajaId { get; set; }
         public DateTime Fecha { get; set; }
-        public string Usuario { get; set; }
         public int Dosmil { get; set; }
         public int Mil { get; set; }
         public int Quinientos { get; set; }
@@ -28,7 +27,6 @@ namespace ControlInventario.Entidades
         {
             CuadreDeCajaId = 0;
             Fecha = DateTime.Now;
-            Usuario = string.Empty;
             Dosmil = 0;
             Mil = 0;
             Quinientos = 0;

@@ -446,7 +446,6 @@ namespace ControlInventario.UI.Registros
                 MessageBox.Show("Factura guardada de manera exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Calculadora(Factura.Total);
                 Limpiar();
-
             }
             else
             {

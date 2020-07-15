@@ -9,18 +9,17 @@ namespace ControlInventario.BLL
         public static bool Guardar(CuadresDeCaja CuadreDeCaja)
         {
             bool paso = false;
-            SqlConnection Conexion = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = InventoryAssistantDb; Integrated Security = True");
+            SqlConnection Conexion = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = ControlInventario; Integrated Security = True");
 
             try
             {
 
-                string query = "INSERT INTO CuadresDeCajas (CuadreDeCajaId, Fecha, Usuario, Dosmil, Mil, Quinientos ,Doscientos, Cien, Cincuenta, Veinticinco, Veinte, Diez, Cinco, Uno, TotalVendido, Diferencia, TotalEnCaja, Estado, UsuarioR) VALUES" +
-                                                          "(@CuadreDeCajaId, @Fecha, @Usuario, @Dosmil, @Mil, @Quinientos, @Doscientos, @Cien, @Cincuenta, @Veinticinco, @Veinte, @Diez, @Cinco, @Uno, @TotalVendido, @Diferencia, @TotalEnCaja, @Estado, @UsuarioR)";
+                string query = "INSERT INTO CuadresDeCajas (CuadreDeCajaId, Fecha, Dosmil, Mil, Quinientos ,Doscientos, Cien, Cincuenta, Veinticinco, Veinte, Diez, Cinco, Uno, TotalVendido, Diferencia, TotalEnCaja) VALUES" +
+                                                          "(@CuadreDeCajaId, @Fecha, @Dosmil, @Mil, @Quinientos, @Doscientos, @Cien, @Cincuenta, @Veinticinco, @Veinte, @Diez, @Cinco, @Uno, @TotalVendido, @Diferencia, @TotalEnCaja)";
                 Conexion.Open();
                 SqlCommand comando = new SqlCommand(query, Conexion);
                 comando.Parameters.AddWithValue("@CuadreDeCajaId", CuadreDeCaja.CuadreDeCajaId);
                 comando.Parameters.AddWithValue("@Fecha", CuadreDeCaja.Fecha);
-                comando.Parameters.AddWithValue("@Usuario", CuadreDeCaja.Usuario);
                 comando.Parameters.AddWithValue("@Dosmil", CuadreDeCaja.Dosmil);
                 comando.Parameters.AddWithValue("@Mil", CuadreDeCaja.Mil);
                 comando.Parameters.AddWithValue("@Quinientos", CuadreDeCaja.Quinientos);

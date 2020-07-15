@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.FacturasDelDiaGroupBox = new System.Windows.Forms.GroupBox();
-            this.UsuarioLabel = new System.Windows.Forms.Label();
-            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.FacturasDataGridView = new System.Windows.Forms.DataGridView();
             this.DiferenciaLabel = new System.Windows.Forms.Label();
             this.TotalVendidoLabel = new System.Windows.Forms.Label();
@@ -115,8 +113,6 @@
             // 
             // FacturasDelDiaGroupBox
             // 
-            this.FacturasDelDiaGroupBox.Controls.Add(this.UsuarioLabel);
-            this.FacturasDelDiaGroupBox.Controls.Add(this.UsuarioTextBox);
             this.FacturasDelDiaGroupBox.Controls.Add(this.FacturasDataGridView);
             this.FacturasDelDiaGroupBox.Controls.Add(this.DiferenciaLabel);
             this.FacturasDelDiaGroupBox.Controls.Add(this.TotalVendidoLabel);
@@ -129,27 +125,6 @@
             this.FacturasDelDiaGroupBox.TabIndex = 285;
             this.FacturasDelDiaGroupBox.TabStop = false;
             this.FacturasDelDiaGroupBox.Text = "Facturas del Dia";
-            // 
-            // UsuarioLabel
-            // 
-            this.UsuarioLabel.AutoSize = true;
-            this.UsuarioLabel.BackColor = System.Drawing.Color.Transparent;
-            this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioLabel.Location = new System.Drawing.Point(8, 333);
-            this.UsuarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UsuarioLabel.Name = "UsuarioLabel";
-            this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
-            this.UsuarioLabel.TabIndex = 176;
-            this.UsuarioLabel.Text = "Usuario:";
-            // 
-            // UsuarioTextBox
-            // 
-            this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
-            this.UsuarioTextBox.Location = new System.Drawing.Point(74, 330);
-            this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.ReadOnly = true;
-            this.UsuarioTextBox.Size = new System.Drawing.Size(247, 22);
-            this.UsuarioTextBox.TabIndex = 290;
             // 
             // FacturasDataGridView
             // 
@@ -1022,6 +997,7 @@
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
             this.FechaDateTimePicker.TabIndex = 281;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 12, 0, 0, 0, 0);
+            this.FechaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDateTimePicker_ValueChanged);
             // 
             // FechaLabel
             // 
@@ -1071,8 +1047,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox FacturasDelDiaGroupBox;
-        private System.Windows.Forms.Label UsuarioLabel;
-        private System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.DataGridView FacturasDataGridView;
         private System.Windows.Forms.Label DiferenciaLabel;
         private System.Windows.Forms.Label TotalVendidoLabel;

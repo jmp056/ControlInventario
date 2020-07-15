@@ -23,7 +23,6 @@ namespace ControlInventario.UI.Registros
         {
             this.CuadreDeCajaId = cuadreDeCajaId;
             InitializeComponent();
-            InitializeComponent();
         }
 
         private void Limpiar() // Funcion encargada de limiar todo el registro
@@ -98,7 +97,6 @@ namespace ControlInventario.UI.Registros
 
             CuadreDeCaja.CuadreDeCajaId = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
             CuadreDeCaja.Fecha = FechaDateTimePicker.Value;
-            CuadreDeCaja.Usuario = UsuarioTextBox.Text;
             CuadreDeCaja.Dosmil = Convert.ToInt32(DosMilNumericUpDown.Value);
             CuadreDeCaja.Mil = Convert.ToInt32(MilNumericUpDown.Value);
             CuadreDeCaja.Quinientos = Convert.ToInt32(QuinientosNumericUpDown.Value);
@@ -119,7 +117,6 @@ namespace ControlInventario.UI.Registros
 
         private void LlenaCampo(CuadresDeCaja CuadreDeCaja)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
-            UsuarioTextBox.Text = CuadreDeCaja.Usuario;
             DosMilNumericUpDown.Value = CuadreDeCaja.Dosmil;
             MilNumericUpDown.Value = CuadreDeCaja.Mil;
             QuinientosNumericUpDown.Value = CuadreDeCaja.Quinientos;
@@ -221,8 +218,6 @@ namespace ControlInventario.UI.Registros
             FacturasDataGridView.Columns[4].HeaderText = "Monto";
             FacturasDataGridView.Columns[4].Width = 80;
             FacturasDataGridView.Columns[4].DefaultCellStyle.Format = "N2";
-            FacturasDataGridView.Columns[5].Visible = false;
-            FacturasDataGridView.Columns[6].Visible = false;
         }
 
         private void Diferencia() // Funcion encargada de calcular la diferencia entre lo cobrado y lo que hay en caja
@@ -614,6 +609,12 @@ namespace ControlInventario.UI.Registros
         {
             if (UnoNumericUpDown.Text == "")
                 UnoNumericUpDown.Text = "0";
+        }
+
+        private void FechaDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            Buscar();
+            CargarFacturas();
         }
     }
 }
