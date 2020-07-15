@@ -22,11 +22,9 @@ namespace ControlInventario.UI.Registros
 
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
-            if (Nivel <= 1)
-            {
-                FacturaIdNumericUpDown.Enabled = true;
-                BuscarButton.Enabled = true;
-            }
+            FacturaIdNumericUpDown.Enabled = true;
+            BuscarButton.Enabled = true;
+
 
             FacturaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
@@ -243,18 +241,12 @@ namespace ControlInventario.UI.Registros
 
             if (Factura != null)
             {
-                if (Factura.Fecha.Date == DateTime.Now.Date || Nivel <= 0)
-                {
-                    LlenaCampos(Factura);
-                    FacturaIdNumericUpDown.Enabled = false;
-                    BuscarButton.Enabled = false;
-                    EliminarProductoButton.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("Usted no tiene acceso a esta factura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
-                }
+
+                LlenaCampos(Factura);
+                FacturaIdNumericUpDown.Enabled = false;
+                BuscarButton.Enabled = false;
+                EliminarProductoButton.Visible = true;
+
             }
             else
             {
@@ -372,10 +364,6 @@ namespace ControlInventario.UI.Registros
         private void rFacturas_Load(object sender, EventArgs e)
         {
             FechaDateTimePicker.Value = DateTime.Now;
-            FacturaIdNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
-            BuscarButton.Enabled = (Nivel <= 1) ? true : false;
-            FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
-            PrecioNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
 
             if (FacturaId > 0)
             {
@@ -519,12 +507,6 @@ namespace ControlInventario.UI.Registros
                     return;
                 }
             }
-        }
-
-        private void FechaDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            Buscar();
-            CargarFacturas();
         }
     }
 }
