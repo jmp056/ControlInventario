@@ -4,6 +4,12 @@ using ControlInventario.Entidades;
 using ControlInventario.UI.Consultas;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControlInventario.UI.Registros
@@ -15,7 +21,6 @@ namespace ControlInventario.UI.Registros
 
         public rFacturas(int facturaId)
         {
-            InitializeComponent();
             this.FacturaId = facturaId;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
@@ -25,8 +30,6 @@ namespace ControlInventario.UI.Registros
         {
             FacturaIdNumericUpDown.Enabled = true;
             BuscarButton.Enabled = true;
-
-
             FacturaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             UsuarioTextBox.Text = string.Empty;
@@ -35,6 +38,7 @@ namespace ControlInventario.UI.Registros
             this.Detalle = new List<DetalleFacturas>();
             DetalleDataGridView.DataSource = null;
             LimpiarProductoGroupBox();
+            UsuarioTextBox.Text = string.Empty;
             TotalTextBox.Text = "0.00";
 
             EliminarProductoButton.Visible = false;
@@ -124,14 +128,12 @@ namespace ControlInventario.UI.Registros
                     Paso = false;
                 }
             }
-
             return Paso;
         }
 
         private bool SiProductoExiste() //Valida si existe un producto en la factura
         {
             bool Existe = false;
-
             int Posicion = 0;
 
             foreach (DataGridViewRow Producto in DetalleDataGridView.Rows) //BUsca por el id del producto si este se encuentra en el detalle
@@ -185,7 +187,7 @@ namespace ControlInventario.UI.Registros
                     LimpiarProductoGroupBox();
                 }
             }
-            
+
             return Existe;
         }
 
@@ -235,19 +237,16 @@ namespace ControlInventario.UI.Registros
             MyErrorProvider.Clear();
             int Id;
             Facturas Factura = new Facturas();
-            RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
 
             int.TryParse(FacturaIdNumericUpDown.Text, out Id);
             Factura = FacturasBLL.Buscar(Id);
 
             if (Factura != null)
             {
-
                 LlenaCampos(Factura);
                 FacturaIdNumericUpDown.Enabled = false;
                 BuscarButton.Enabled = false;
                 EliminarProductoButton.Visible = true;
-
             }
             else
             {
@@ -255,6 +254,7 @@ namespace ControlInventario.UI.Registros
                 FacturaIdNumericUpDown.Focus();
             }
         }
+
 
         private void LlenaCampos(Facturas Factura) // Funcion encargada de llenar los campos de registro con los datos de la factura
         {
@@ -266,46 +266,6 @@ namespace ControlInventario.UI.Registros
             ClienteTextBox.Text = Factura.Cliente;
             this.Detalle = Factura.Detalle;
             CargaGrid();
-        }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
-        {
-            Facturas Factura = new Facturas();
-            bool Paso = false;
-            if (!Validar())
-                return;
-
-            Factura = LlenaClase();
-            if (FacturaIdNumericUpDown.Value == 0)
-            {
-
-                Paso = FacturasBLL.Guardar(Factura);
-                MessageBox.Show("Factura guardada de manera exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Calculadora(Factura.Total);
-                Limpiar();
-            }
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-
-                    MessageBox.Show("Este numero de factura no existe, por ende, no puede ser modificada!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (MessageBox.Show("Esta seguro que desea modificar esta factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                {
-                    Paso = FacturasBLL.Modificar(Factura);
-                    MessageBox.Show("Factura modificada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Calculadora(Factura.Total);
-                    Limpiar();
-                }
-                else
-                    return;
-
-                if (!Paso)
-                    MessageBox.Show("La factura no pudo ser guardada!", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -350,7 +310,6 @@ namespace ControlInventario.UI.Registros
             DetalleDataGridView.Columns[6].Width = 69;
             DetalleDataGridView.Columns[6].DefaultCellStyle.Format = "N2";
         }
-
 
         private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
         {
@@ -400,7 +359,6 @@ namespace ControlInventario.UI.Registros
                 LlenaCamposProducto(Producto);
                 CantidadNumericUpDown.Focus();
             }
-       
         }
 
         private void VerProductosButton_Click(object sender, EventArgs e)
@@ -471,7 +429,46 @@ namespace ControlInventario.UI.Registros
             }
             else
                 MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            Facturas Factura = new Facturas();
+            bool Paso = false;
+            if (!Validar())
+                return;
+
+            Factura = LlenaClase();
+            if (FacturaIdNumericUpDown.Value == 0)
+            {
+
+                Paso = FacturasBLL.Guardar(Factura);
+                MessageBox.Show("Factura guardada de manera exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Calculadora(Factura.Total);
+                Limpiar();
+            }
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+
+                    MessageBox.Show("Este numero de factura no existe, por ende, no puede ser modificada!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (MessageBox.Show("Esta seguro que desea modificar esta factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    Paso = FacturasBLL.Modificar(Factura);
+                    MessageBox.Show("Factura modificada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Calculadora(Factura.Total);
+                    Limpiar();
+                }
+                else
+                    return;
+
+                if (!Paso)
+                    MessageBox.Show("La factura no pudo ser guardada!", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,15 +24,12 @@ namespace ControlInventario.BLL
 
                 if (contexto.Facturas.Add(Factura) != null)
                 {
-
                     foreach (var item in Factura.Detalle)
                     {
-                        Producto = new Productos();
-                        Producto = contexto.Productos.Find(item.ProductoId);
-                        if (Producto.ControlAlmacen == true)
-                            Producto.Cantidad -= item.Cantidad;
+                        contexto.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
                     }
                 }
+                
                 Paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -60,33 +58,30 @@ namespace ControlInventario.BLL
             try
             {
 
-                Facturas Anterior = Buscar(Factura.FacturaId);
-                foreach (var item in Anterior.Detalle)
+                Facturas FacturaAnterior = contexto.Facturas.Where(e => e.FacturaId == Factura.FacturaId).Include(d => d.Detalle).FirstOrDefault();
+
+                contexto = new Contexto();
+                foreach (var item in FacturaAnterior.Detalle)
                 {
-                    Producto = new Productos();
                     if (!Factura.Detalle.Any(d => d.DetalleFacturaId == item.DetalleFacturaId))
                     {
-                        Producto = contexto.Productos.Find(item.ProductoId);
-                        if (Producto.ControlAlmacen == true)
-                            Producto.Cantidad += item.Cantidad;
+                        contexto.Productos.Find(item.ProductoId).Cantidad += item.Cantidad;
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
 
                 foreach (var item in Factura.Detalle)
                 {
-                    Producto = new Productos();
                     if (item.DetalleFacturaId == 0)
                     {
-                        Producto = contexto.Productos.Find(item.ProductoId);
-                        if (Producto.ControlAlmacen == true)
-                            Producto.Cantidad -= item.Cantidad;
+                        contexto.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
                         contexto.Entry(item).State = EntityState.Added;
+
                     }
                     else
                     {
-
                         contexto.Entry(item).State = EntityState.Modified;
+
                     }
                 }
                 contexto.Entry(Factura).State = EntityState.Modified;
@@ -117,14 +112,13 @@ namespace ControlInventario.BLL
             try
             {
 
-                Facturas Factura = contexto.Facturas.Find(Id);
+                Facturas Factura = contexto.Facturas.Where(e => e.FacturaId == Id).Include(d => d.Detalle).FirstOrDefault();
+
                 foreach (var item in Factura.Detalle)
                 {
+                    contexto.Productos.Find(item.ProductoId).Cantidad += item.Cantidad;
 
-                    var EliminInventario = contexto.Productos.Find(item.ProductoId);
-                    EliminInventario.Cantidad += item.Cantidad;
                 }
-
                 contexto.Facturas.Remove(Factura);
                 Paso = contexto.SaveChanges() > 0;
             }
@@ -150,9 +144,7 @@ namespace ControlInventario.BLL
             try
             {
 
-                Factura = contexto.Facturas.Find(id);
-                if (Factura != null)
-                    Factura.Detalle.Count();
+                Factura = contexto.Facturas.Where(e => e.FacturaId == id).Include(d => d.Detalle).FirstOrDefault();
             }
             catch (Exception)
             {
@@ -167,5 +159,22 @@ namespace ControlInventario.BLL
 
             return Factura;
         }
+
+        public List<Facturas> GetList(Expression<Func<Facturas, bool>> expression)
+        {
+            Contexto contexto = new Contexto();
+            List<Facturas> lista;
+
+            try
+            {
+                lista = contexto.Facturas.Where(expression).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return lista;
+        }
+
     }
 }

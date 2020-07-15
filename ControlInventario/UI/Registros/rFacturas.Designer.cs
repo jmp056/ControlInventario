@@ -74,7 +74,7 @@
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(481, 458);
+            this.EliminarButton.Location = new System.Drawing.Point(479, 472);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 35);
@@ -88,7 +88,7 @@
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(275, 458);
+            this.GuardarButton.Location = new System.Drawing.Point(273, 472);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
@@ -102,7 +102,7 @@
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LimpiarButton.Location = new System.Drawing.Point(25, 458);
+            this.LimpiarButton.Location = new System.Drawing.Point(23, 472);
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
@@ -116,7 +116,7 @@
             // 
             this.ClienteLabel.AutoSize = true;
             this.ClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteLabel.Location = new System.Drawing.Point(317, 63);
+            this.ClienteLabel.Location = new System.Drawing.Point(315, 77);
             this.ClienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClienteLabel.Name = "ClienteLabel";
             this.ClienteLabel.Size = new System.Drawing.Size(60, 16);
@@ -127,7 +127,7 @@
             // 
             this.ClienteTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ClienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteTextBox.Location = new System.Drawing.Point(382, 61);
+            this.ClienteTextBox.Location = new System.Drawing.Point(380, 75);
             this.ClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClienteTextBox.Name = "ClienteTextBox";
             this.ClienteTextBox.Size = new System.Drawing.Size(198, 22);
@@ -137,7 +137,7 @@
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(242, 14);
+            this.BuscarButton.Location = new System.Drawing.Point(240, 28);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
@@ -152,7 +152,7 @@
             this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(464, 21);
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(462, 35);
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
@@ -163,7 +163,7 @@
             // 
             this.FechaLabel.AutoSize = true;
             this.FechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(401, 23);
+            this.FechaLabel.Location = new System.Drawing.Point(399, 37);
             this.FechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaLabel.Name = "FechaLabel";
             this.FechaLabel.Size = new System.Drawing.Size(55, 16);
@@ -173,8 +173,9 @@
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
+            this.UsuarioTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioTextBox.Location = new System.Drawing.Point(109, 61);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(107, 75);
             this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(190, 22);
@@ -184,7 +185,7 @@
             // 
             this.VendedorLabel.AutoSize = true;
             this.VendedorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendedorLabel.Location = new System.Drawing.Point(27, 63);
+            this.VendedorLabel.Location = new System.Drawing.Point(25, 77);
             this.VendedorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VendedorLabel.Name = "VendedorLabel";
             this.VendedorLabel.Size = new System.Drawing.Size(80, 16);
@@ -194,7 +195,7 @@
             // FacturaIdNumericUpDown
             // 
             this.FacturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacturaIdNumericUpDown.Location = new System.Drawing.Point(129, 21);
+            this.FacturaIdNumericUpDown.Location = new System.Drawing.Point(127, 35);
             this.FacturaIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.FacturaIdNumericUpDown.Name = "FacturaIdNumericUpDown";
             this.FacturaIdNumericUpDown.Size = new System.Drawing.Size(92, 22);
@@ -204,7 +205,7 @@
             // 
             this.FacturaIdLabel.AutoSize = true;
             this.FacturaIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacturaIdLabel.Location = new System.Drawing.Point(27, 23);
+            this.FacturaIdLabel.Location = new System.Drawing.Point(25, 37);
             this.FacturaIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FacturaIdLabel.Name = "FacturaIdLabel";
             this.FacturaIdLabel.Size = new System.Drawing.Size(92, 16);
@@ -230,7 +231,7 @@
             this.DetalleGroupBox.Controls.Add(this.ProductoIdLabel);
             this.DetalleGroupBox.Controls.Add(this.AgregarProductoButton);
             this.DetalleGroupBox.Controls.Add(this.BuscarProductoButton);
-            this.DetalleGroupBox.Location = new System.Drawing.Point(14, 102);
+            this.DetalleGroupBox.Location = new System.Drawing.Point(12, 116);
             this.DetalleGroupBox.Name = "DetalleGroupBox";
             this.DetalleGroupBox.Size = new System.Drawing.Size(592, 328);
             this.DetalleGroupBox.TabIndex = 205;
@@ -451,7 +452,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 510);
+            this.ClientSize = new System.Drawing.Size(616, 534);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.LimpiarButton);
