@@ -1,4 +1,5 @@
-﻿using ControlInventario.UI.Registros;
+﻿using ControlInventario.UI.Consultas;
+using ControlInventario.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,12 @@ namespace ControlInventario
         {
             rFacturas rF = new rFacturas(0);
             rF.ShowDialog();
+        }
+
+        private void consultarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCategorias cC = new cCategorias();
+            cC.ShowDialog();
         }
     }
 }

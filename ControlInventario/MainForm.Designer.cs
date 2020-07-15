@@ -32,10 +32,11 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,12 +77,6 @@
             this.registroDeProductosToolStripMenuItem.Text = "Registro de Productos";
             this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
             // registroDeFacturasToolStripMenuItem
             // 
             this.registroDeFacturasToolStripMenuItem.Name = "registroDeFacturasToolStripMenuItem";
@@ -102,6 +97,21 @@
             this.cuadreDeCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja";
             this.cuadreDeCajaToolStripMenuItem.Click += new System.EventHandler(this.cuadreDeCajaToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarCategoriasToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // consultarCategoriasToolStripMenuItem
+            // 
+            this.consultarCategoriasToolStripMenuItem.Name = "consultarCategoriasToolStripMenuItem";
+            this.consultarCategoriasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.consultarCategoriasToolStripMenuItem.Text = "Consultar categorias";
+            this.consultarCategoriasToolStripMenuItem.Click += new System.EventHandler(this.consultarCategoriasToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -129,6 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadreDeCajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarCategoriasToolStripMenuItem;
     }
 }
 
