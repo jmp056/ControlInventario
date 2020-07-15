@@ -56,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CuadresDeCajaBLL.cs" />
     <Compile Include="BLL\EntradaProductosBLL.cs" />
+    <Compile Include="BLL\FacturasBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
@@ -80,6 +82,12 @@
     </Compile>
     <Compile Include="UI\Registros\rCategorias.Designer.cs">
       <DependentUpon>rCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCuadreDeCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCuadreDeCaja.Designer.cs">
+      <DependentUpon>rCuadreDeCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rEntradaProductos.cs">
       <SubType>Form</SubType>
@@ -113,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\rCategorias.resx">
       <DependentUpon>rCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCuadreDeCaja.resx">
+      <DependentUpon>rCuadreDeCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rEntradaProductos.resx">
       <DependentUpon>rEntradaProductos.cs</DependentUpon>

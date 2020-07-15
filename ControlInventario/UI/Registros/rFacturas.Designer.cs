@@ -158,6 +158,7 @@
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
             this.FechaDateTimePicker.TabIndex = 203;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 12, 0, 0, 0, 0);
+            this.FechaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDateTimePicker_ValueChanged);
             // 
             // FechaLabel
             // 

@@ -3,12 +3,6 @@ using ControlInventario.DAL;
 using ControlInventario.Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControlInventario.UI.Registros
@@ -16,13 +10,11 @@ namespace ControlInventario.UI.Registros
     public partial class rFacturas : Form
     {
         public List<DetalleFacturas> Detalle;
-        int Nivel;
         int FacturaId;
 
-        public rFacturas(int nivel, int facturaId)
+        public rFacturas(int facturaId)
         {
             InitializeComponent();
-            this.Nivel = nivel;
             this.FacturaId = facturaId;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
@@ -527,6 +519,12 @@ namespace ControlInventario.UI.Registros
                     return;
                 }
             }
+        }
+
+        private void FechaDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            Buscar();
+            CargarFacturas();
         }
     }
 }

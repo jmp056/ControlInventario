@@ -2,7 +2,7 @@
 
 namespace ControlInventario.Entidades
 {
-    class DetalleFacturas
+    public class DetalleFacturas
     {
         [Key]
         public int DetalleFacturaId { get; set; }
