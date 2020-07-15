@@ -158,7 +158,6 @@
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
             this.FechaDateTimePicker.TabIndex = 203;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 12, 0, 0, 0, 0);
-            this.FechaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDateTimePicker_ValueChanged);
             // 
             // FechaLabel
             // 
@@ -178,7 +177,6 @@
             this.UsuarioTextBox.Location = new System.Drawing.Point(109, 61);
             this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.ReadOnly = true;
             this.UsuarioTextBox.Size = new System.Drawing.Size(190, 22);
             this.UsuarioTextBox.TabIndex = 213;
             // 

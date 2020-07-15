@@ -1,5 +1,6 @@
 ﻿using ControlInventario.BLL;
 using ControlInventario.Entidades;
+using ControlInventario.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

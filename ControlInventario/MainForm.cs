@@ -29,5 +29,23 @@ namespace ControlInventario
             rProductos rP = new rProductos(0);
             rP.ShowDialog();
         }
+
+        private void cuadreDeCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCuadreDeCaja rCC = new rCuadreDeCaja(0);
+            rCC.ShowDialog();
+        }
+
+        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradaProductos rE = new rEntradaProductos(0, 0);
+            rE.ShowDialog();
+        }
+
+        private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rFacturas rF = new rFacturas(0);
+            rF.ShowDialog();
+        }
     }
 }

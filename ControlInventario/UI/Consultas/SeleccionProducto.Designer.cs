@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.SeleccionarProductoButton = new System.Windows.Forms.Button();
             this.BusquedaGroupBox = new System.Windows.Forms.GroupBox();
@@ -41,37 +42,41 @@
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.FiltrarPorLabel = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDataGridView)).BeginInit();
             this.BusquedaGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HastaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesdeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductosDataGridView
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductosDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductosDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.ProductosDataGridView.Location = new System.Drawing.Point(11, 66);
             this.ProductosDataGridView.Name = "ProductosDataGridView";
             this.ProductosDataGridView.ReadOnly = true;
             this.ProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductosDataGridView.Size = new System.Drawing.Size(748, 377);
             this.ProductosDataGridView.TabIndex = 29;
+            this.ProductosDataGridView.Click += new System.EventHandler(this.ProductosDataGridView_Click);
+            this.ProductosDataGridView.DoubleClick += new System.EventHandler(this.ProductosDataGridView_DoubleClick);
             // 
             // SeleccionarProductoButton
             // 
@@ -122,6 +127,7 @@
             this.RealizarBusquedaButton.Text = "Buscar";
             this.RealizarBusquedaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
+            this.RealizarBusquedaButton.Click += new System.EventHandler(this.RealizarBusquedaButton_Click);
             // 
             // HastaNumericUpDown
             // 
@@ -183,6 +189,7 @@
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(127, 24);
             this.FiltroComboBox.TabIndex = 1;
+            this.FiltroComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltroComboBox_SelectedIndexChanged);
             // 
             // FiltrarPorLabel
             // 
@@ -200,6 +207,10 @@
             this.CriterioTextBox.Size = new System.Drawing.Size(202, 22);
             this.CriterioTextBox.TabIndex = 3;
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // SeleccionProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,11 +221,13 @@
             this.Controls.Add(this.BusquedaGroupBox);
             this.Name = "SeleccionProducto";
             this.Text = "SeleccionProducto";
+            this.Load += new System.EventHandler(this.SeleccionProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDataGridView)).EndInit();
             this.BusquedaGroupBox.ResumeLayout(false);
             this.BusquedaGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HastaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesdeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +245,6 @@
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label FiltrarPorLabel;
         private System.Windows.Forms.TextBox CriterioTextBox;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

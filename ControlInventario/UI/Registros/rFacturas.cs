@@ -1,6 +1,7 @@
 ﻿using ControlInventario.BLL;
 using ControlInventario.DAL;
 using ControlInventario.Entidades;
+using ControlInventario.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
