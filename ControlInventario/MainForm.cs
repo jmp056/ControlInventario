@@ -72,5 +72,11 @@ namespace ControlInventario
             cFacturas cF = new cFacturas();
             cF.ShowDialog();
         }
+
+        private void consultaDeCuadresDeCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCuadreDeCaja cCC = new cCuadreDeCaja();
+            cCC.ShowDialog();
+        }
     }
 }

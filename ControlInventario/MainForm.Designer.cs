@@ -40,6 +40,7 @@
             this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeCuadresDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,8 @@
             this.consultarCategoriasToolStripMenuItem,
             this.consultaDeProductosToolStripMenuItem,
             this.consultaDeEntradaDeProductosToolStripMenuItem,
-            this.consultaDeFacturasToolStripMenuItem});
+            this.consultaDeFacturasToolStripMenuItem,
+            this.consultaDeCuadresDeCajaToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -140,6 +142,13 @@
             this.consultaDeFacturasToolStripMenuItem.Text = "Consulta de facturas";
             this.consultaDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeFacturasToolStripMenuItem_Click);
             // 
+            // consultaDeCuadresDeCajaToolStripMenuItem
+            // 
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Name = "consultaDeCuadresDeCajaToolStripMenuItem";
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Text = "Consulta de cuadres de caja";
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Click += new System.EventHandler(this.consultaDeCuadresDeCajaToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeEntradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeCuadresDeCajaToolStripMenuItem;
     }
 }
 
