@@ -39,6 +39,7 @@
             this.consultarCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +106,8 @@
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarCategoriasToolStripMenuItem,
             this.consultaDeProductosToolStripMenuItem,
-            this.consultaDeEntradaDeProductosToolStripMenuItem});
+            this.consultaDeEntradaDeProductosToolStripMenuItem,
+            this.consultaDeFacturasToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -130,6 +132,13 @@
             this.consultaDeEntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.consultaDeEntradaDeProductosToolStripMenuItem.Text = "Consulta de entrada de productos";
             this.consultaDeEntradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEntradaDeProductosToolStripMenuItem_Click);
+            // 
+            // consultaDeFacturasToolStripMenuItem
+            // 
+            this.consultaDeFacturasToolStripMenuItem.Name = "consultaDeFacturasToolStripMenuItem";
+            this.consultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.consultaDeFacturasToolStripMenuItem.Text = "Consulta de facturas";
+            this.consultaDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeFacturasToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarCategoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeEntradaDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeFacturasToolStripMenuItem;
     }
 }
 

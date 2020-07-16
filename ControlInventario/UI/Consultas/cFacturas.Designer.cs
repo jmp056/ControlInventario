@@ -1,6 +1,6 @@
 ﻿namespace ControlInventario.UI.Consultas
 {
-    partial class cEntradaProductos
+    partial class cFacturas
     {
         /// <summary>
         /// Required designer variable.
@@ -35,10 +35,8 @@
             this.HastaFechaLabel = new System.Windows.Forms.Label();
             this.DesdeFechaLabel = new System.Windows.Forms.Label();
             this.FiltrarPorFechaCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.EntradasProductosDataGridView = new System.Windows.Forms.DataGridView();
-            this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
-            this.DatosDeLaEntradaButton = new System.Windows.Forms.Button();
+            this.DatosDeLaFacturaGroupBox = new System.Windows.Forms.GroupBox();
+            this.DatosDeLaFacturaButton = new System.Windows.Forms.Button();
             this.BuscarGroupBox = new System.Windows.Forms.GroupBox();
             this.HastaLabel = new System.Windows.Forms.Label();
             this.HastaNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -48,14 +46,16 @@
             this.CriterioLabel = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.FiltrarPorlabel = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FacturaDataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.FechaGroupBox.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EntradasProductosDataGridView)).BeginInit();
-            this.DatosDelUsuarioGroupBox.SuspendLayout();
+            this.DatosDeLaFacturaGroupBox.SuspendLayout();
             this.BuscarGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HastaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesdeNumericUpDown)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,10 +67,10 @@
             this.FechaGroupBox.Controls.Add(this.DesdeFechaLabel);
             this.FechaGroupBox.Controls.Add(this.FiltrarPorFechaCheckBox);
             this.FechaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaGroupBox.Location = new System.Drawing.Point(6, 265);
+            this.FechaGroupBox.Location = new System.Drawing.Point(7, 267);
             this.FechaGroupBox.Name = "FechaGroupBox";
             this.FechaGroupBox.Size = new System.Drawing.Size(190, 92);
-            this.FechaGroupBox.TabIndex = 32;
+            this.FechaGroupBox.TabIndex = 35;
             this.FechaGroupBox.TabStop = false;
             this.FechaGroupBox.Text = "     Filtrar por Fecha";
             // 
@@ -132,50 +132,29 @@
             this.FiltrarPorFechaCheckBox.UseVisualStyleBackColor = true;
             this.FiltrarPorFechaCheckBox.CheckedChanged += new System.EventHandler(this.FiltrarPorFechaCheckBox_CheckedChanged);
             // 
-            // groupBox2
+            // DatosDeLaFacturaGroupBox
             // 
-            this.groupBox2.Controls.Add(this.EntradasProductosDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(201, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(565, 416);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
+            this.DatosDeLaFacturaGroupBox.Controls.Add(this.DatosDeLaFacturaButton);
+            this.DatosDeLaFacturaGroupBox.Controls.Add(this.BuscarGroupBox);
+            this.DatosDeLaFacturaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatosDeLaFacturaGroupBox.Location = new System.Drawing.Point(7, 6);
+            this.DatosDeLaFacturaGroupBox.Name = "DatosDeLaFacturaGroupBox";
+            this.DatosDeLaFacturaGroupBox.Size = new System.Drawing.Size(190, 417);
+            this.DatosDeLaFacturaGroupBox.TabIndex = 33;
+            this.DatosDeLaFacturaGroupBox.TabStop = false;
+            this.DatosDeLaFacturaGroupBox.Text = "Consultar Facturas";
             // 
-            // EntradasProductosDataGridView
+            // DatosDeLaFacturaButton
             // 
-            this.EntradasProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EntradasProductosDataGridView.Location = new System.Drawing.Point(6, 10);
-            this.EntradasProductosDataGridView.Name = "EntradasProductosDataGridView";
-            this.EntradasProductosDataGridView.ReadOnly = true;
-            this.EntradasProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EntradasProductosDataGridView.Size = new System.Drawing.Size(553, 400);
-            this.EntradasProductosDataGridView.TabIndex = 0;
-            this.EntradasProductosDataGridView.Click += new System.EventHandler(this.EntradasProductosDataGridView_Click);
-            this.EntradasProductosDataGridView.DoubleClick += new System.EventHandler(this.EntradasProductosDataGridView_DoubleClick);
-            // 
-            // DatosDelUsuarioGroupBox
-            // 
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.DatosDeLaEntradaButton);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.BuscarGroupBox);
-            this.DatosDelUsuarioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(6, 6);
-            this.DatosDelUsuarioGroupBox.Name = "DatosDelUsuarioGroupBox";
-            this.DatosDelUsuarioGroupBox.Size = new System.Drawing.Size(190, 417);
-            this.DatosDelUsuarioGroupBox.TabIndex = 30;
-            this.DatosDelUsuarioGroupBox.TabStop = false;
-            this.DatosDelUsuarioGroupBox.Text = "Consultar Entradas";
-            // 
-            // DatosDeLaEntradaButton
-            // 
-            this.DatosDeLaEntradaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DatosDeLaEntradaButton.Location = new System.Drawing.Point(5, 30);
-            this.DatosDeLaEntradaButton.Name = "DatosDeLaEntradaButton";
-            this.DatosDeLaEntradaButton.Size = new System.Drawing.Size(180, 50);
-            this.DatosDeLaEntradaButton.TabIndex = 24;
-            this.DatosDeLaEntradaButton.Text = "Datos de la Entrada";
-            this.DatosDeLaEntradaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DatosDeLaEntradaButton.UseVisualStyleBackColor = true;
-            this.DatosDeLaEntradaButton.Click += new System.EventHandler(this.DatosDeLaEntradaButton_Click);
+            this.DatosDeLaFacturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DatosDeLaFacturaButton.Location = new System.Drawing.Point(5, 30);
+            this.DatosDeLaFacturaButton.Name = "DatosDeLaFacturaButton";
+            this.DatosDeLaFacturaButton.Size = new System.Drawing.Size(180, 50);
+            this.DatosDeLaFacturaButton.TabIndex = 24;
+            this.DatosDeLaFacturaButton.Text = "Datos de la Factura";
+            this.DatosDeLaFacturaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DatosDeLaFacturaButton.UseVisualStyleBackColor = true;
+            this.DatosDeLaFacturaButton.Click += new System.EventHandler(this.DatosDeLaFacturaButton_Click);
             // 
             // BuscarGroupBox
             // 
@@ -278,8 +257,9 @@
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "Codigo",
-            "Producto",
-            "Cantidad"});
+            "Vendedor",
+            "Cliente",
+            "Monto"});
             this.FiltroComboBox.Location = new System.Drawing.Point(5, 55);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(180, 24);
@@ -295,31 +275,52 @@
             this.FiltrarPorlabel.TabIndex = 0;
             this.FiltrarPorlabel.Text = "Filtrar por";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.FacturaDataGridView);
+            this.groupBox2.Location = new System.Drawing.Point(202, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(733, 416);
+            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabStop = false;
+            // 
+            // FacturaDataGridView
+            // 
+            this.FacturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FacturaDataGridView.Location = new System.Drawing.Point(6, 10);
+            this.FacturaDataGridView.Name = "FacturaDataGridView";
+            this.FacturaDataGridView.ReadOnly = true;
+            this.FacturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.FacturaDataGridView.Size = new System.Drawing.Size(723, 400);
+            this.FacturaDataGridView.TabIndex = 0;
+            this.FacturaDataGridView.Click += new System.EventHandler(this.FacturaDataGridView_Click);
+            this.FacturaDataGridView.DoubleClick += new System.EventHandler(this.FacturaDataGridView_DoubleClick);
+            // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // cEntradaProductos
+            // cFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 429);
+            this.ClientSize = new System.Drawing.Size(942, 428);
             this.Controls.Add(this.FechaGroupBox);
+            this.Controls.Add(this.DatosDeLaFacturaGroupBox);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.DatosDelUsuarioGroupBox);
-            this.Name = "cEntradaProductos";
-            this.Text = "cEntradaProductos";
-            this.Activated += new System.EventHandler(this.cEntradaProductos_Activated);
-            this.Load += new System.EventHandler(this.cEntradaProductos_Load);
+            this.Name = "cFacturas";
+            this.Text = "cFacturas";
+            this.Activated += new System.EventHandler(this.cFacturas_Activated);
+            this.Load += new System.EventHandler(this.cFacturas_Load);
             this.FechaGroupBox.ResumeLayout(false);
             this.FechaGroupBox.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EntradasProductosDataGridView)).EndInit();
-            this.DatosDelUsuarioGroupBox.ResumeLayout(false);
+            this.DatosDeLaFacturaGroupBox.ResumeLayout(false);
             this.BuscarGroupBox.ResumeLayout(false);
             this.BuscarGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HastaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesdeNumericUpDown)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -333,10 +334,8 @@
         private System.Windows.Forms.Label HastaFechaLabel;
         private System.Windows.Forms.Label DesdeFechaLabel;
         private System.Windows.Forms.CheckBox FiltrarPorFechaCheckBox;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView EntradasProductosDataGridView;
-        private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
-        private System.Windows.Forms.Button DatosDeLaEntradaButton;
+        private System.Windows.Forms.GroupBox DatosDeLaFacturaGroupBox;
+        private System.Windows.Forms.Button DatosDeLaFacturaButton;
         private System.Windows.Forms.GroupBox BuscarGroupBox;
         private System.Windows.Forms.Label HastaLabel;
         private System.Windows.Forms.NumericUpDown HastaNumericUpDown;
@@ -346,6 +345,8 @@
         private System.Windows.Forms.Label CriterioLabel;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label FiltrarPorlabel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView FacturaDataGridView;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

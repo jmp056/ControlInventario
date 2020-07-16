@@ -252,5 +252,10 @@ namespace ControlInventario.UI.Consultas
         {
             Buscar();
         }
+
+        private void FiltrarPorFechaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Buscar();
+        }
     }
 }

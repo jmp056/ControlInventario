@@ -66,5 +66,11 @@ namespace ControlInventario
             cEntradaProductos cEP = new cEntradaProductos();
             cEP.ShowDialog();
         }
+
+        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cFacturas cF = new cFacturas();
+            cF.ShowDialog();
+        }
     }
 }
