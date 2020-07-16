@@ -37,6 +37,7 @@
             this.cuadreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MyMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +102,8 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarCategoriasToolStripMenuItem});
+            this.consultarCategoriasToolStripMenuItem,
+            this.consultaDeProductosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -112,6 +114,13 @@
             this.consultarCategoriasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.consultarCategoriasToolStripMenuItem.Text = "Consultar categorias";
             this.consultarCategoriasToolStripMenuItem.Click += new System.EventHandler(this.consultarCategoriasToolStripMenuItem_Click);
+            // 
+            // consultaDeProductosToolStripMenuItem
+            // 
+            this.consultaDeProductosToolStripMenuItem.Name = "consultaDeProductosToolStripMenuItem";
+            this.consultaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.consultaDeProductosToolStripMenuItem.Text = "Consulta de productos";
+            this.consultaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeProductosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -140,6 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadreDeCajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarCategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
     }
 }
 

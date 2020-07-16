@@ -84,6 +84,12 @@
     <Compile Include="UI\Consultas\cCategorias.Designer.cs">
       <DependentUpon>cCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cProductos.Designer.cs">
+      <DependentUpon>cProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\SeleccionProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\cCategorias.resx">
       <DependentUpon>cCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cProductos.resx">
+      <DependentUpon>cProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\SeleccionProducto.resx">
       <DependentUpon>SeleccionProducto.cs</DependentUpon>

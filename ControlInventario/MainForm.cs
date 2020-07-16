@@ -54,5 +54,11 @@ namespace ControlInventario
             cCategorias cC = new cCategorias();
             cC.ShowDialog();
         }
+
+        private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cProductos cP = new cProductos();
+            cP.ShowDialog();
+        }
     }
 }
