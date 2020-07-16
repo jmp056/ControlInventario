@@ -60,5 +60,11 @@ namespace ControlInventario
             cProductos cP = new cProductos();
             cP.ShowDialog();
         }
+
+        private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEntradaProductos cEP = new cEntradaProductos();
+            cEP.ShowDialog();
+        }
     }
 }
